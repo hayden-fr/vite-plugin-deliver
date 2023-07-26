@@ -1,0 +1,39 @@
+{
+  "name": "vite-plugin-deliver",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "hayden",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayden-fr/vite-plugin-deliver.git",
+    "directory": "packages/plugin-deliver"
+  },
+  "bugs": {
+    "url": "https://github.com/hayden-fr/vite-plugin-deliver/issues"
+  },
+  "homepage": "https://github.com/hayden-fr/vite-plugin-deliver#readme",
+  "dependencies": {
+    "esbuild": "^0.18.16"
+  },
+  "peerDependencies": {
+    "vite": "^4.4.7"
+  }
+}

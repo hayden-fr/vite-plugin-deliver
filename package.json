@@ -1,12 +1,49 @@
 {
-  "name": "vite-plugin-deliver",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vite-plugin-deliver-monorepo",
+  "private": true,
+  "type": "module",
+  "homepage": "https://github.com/hayden-fr/vite-plugin-deliver",
+  "keywords": [
+    "vite",
+    "vite-plugin"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "build": "pnpm -r --filter='./packages/*' run build",
+    "dev": "pnpm -r --filter='./packages/*' run dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "hayden",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.4",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.45.0",
+    "lint-staged": "^13.2.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "vite": "^4.4.7",
+    "vitest": "^0.33.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --cache --ignore-unknown"
+    ],
+    "packages/*/{src,types}/**/*.ts": [
+      "eslint --cache --fix"
+    ],
+    "packages/**/*.d.ts": [
+      "eslint --cache --fix"
+    ],
+    "playground/**/__tests__/**/*.ts": [
+      "eslint --cache --fix"
+    ]
+  }
 }

@@ -2,14 +2,9 @@
 
 # dependencies
 node_modules
-/packages/*/node_modules
 
 # production
-/packages/*/dist
-/packages/*/lib
-/packages/*/lib-*
-/packages/*/es
-**/fixtures/**/dist
+dist
 
 # misc
 .DS_Store

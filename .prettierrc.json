@@ -5,6 +5,5 @@
   "singleQuote": true,
   "proseWrap": "never",
   "trailingComma": "all",
-  "endOfLine": "lf",
-  "plugins": ["prettier-plugin-organize-imports"]
+  "endOfLine": "lf"
 }
