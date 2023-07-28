@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/hayden-fr/vite-plugin-deliver#readme",
   "dependencies": {
-    "esbuild": "^0.18.16"
+    "fast-glob": "^3.3.1"
   },
   "peerDependencies": {
     "vite": "^4.4.7"
